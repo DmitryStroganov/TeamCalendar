@@ -1,0 +1,49 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="padding-top: 50px; margin: 0 50px 0 50px;" id="Main">
+    <div id="HoverBox" style="display: none; position: absolute; z-index: 65535; background: #eee; border-right: solid 1px #faa; opacity: 0.65; -moz-opacity: 0.65;">
+        &nbsp;
+    </div>
+    <div id="DateBox" style="display: none; position: absolute; z-index: 255; font-size: 30px; color: #000">
+    </div>
+    <div id="WeekNumberBox" style="display: none; position: absolute; z-index: 255; font-size: 30px; color: #000">
+        week number {{#}}
+    </div>
+    <div id="ClockBox" style="display: none; position: absolute; z-index: 255; font-size: 30px;color: #000">
+        &nbsp;
+    </div>
+    <div id="LiveBox" style="display: none; position: absolute; z-index: 255; font-size: 10px;">
+        [LIVE]
+    </div>
+    <div id="CalendarContent">    
+    </div>
+    <div id="timeshift" style="display: none;">
+        <a href="#" id="timeshift_prev">[prev]</a>
+        <a href="#" id="timeshift_now">[today]</a>
+        <a href="#" id="timeshift_next">[next]</a>
+    </div>   
+    <div id="loader" style="display: none; position: absolute; z-index: 255;"><img src="~/Content/ajax_progress.gif"></div>    
+    <div id="ServerErrors">
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        
+        var serviceUrl = window.location.href.split("#")[0];
+
+        TeamCalendarScripts.Setup = {
+            ServiceUrl: serviceUrl,
+            ServerErrorsRef: $("#ServerErrors"),
+            MainFrameRef: $("#Main"),
+            CalendarGridRef: $("#CalendarContent"),
+            HoverBoxRef: $("#HoverBox"),
+            ClockBoxRef: $("#ClockBox"),
+            LiveBoxRef: $("#LiveBox"),
+            DateBoxRef: $("#DateBox")
+        };
+
+        TeamCalendarScripts.Initialize();
+    });
+</script>  

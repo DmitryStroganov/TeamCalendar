@@ -5,7 +5,11 @@ HTML-based viewer of co-workers and meeting room occupancy information.
 * This is a must-have for agile processes, e.g. sprint planning.
 * Most typically it is used as Wall TV in the office.
 
+![team calendar - free preview ](/docs/TeamCalendar_free_preview.png)
+
 # How it works / Technical design
+
+![team calendar - architecture diagram ](/docs/Architecture_diagram.png)
 
 Team Calendar connects to your corporate MS Exchange Server or MS Office 365, using a read-only account and displays live, aggregated calendar view in a web browser.
 
